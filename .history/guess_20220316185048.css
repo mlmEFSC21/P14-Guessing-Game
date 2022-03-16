@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    color: white;
+}
+.gameContainer {
+    background-color: hotpink;
+    display: grid;
+    max-width: 960px;
+    margin: 10px auto;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(200px, auto);
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+}
+.results {
+    background-color: mediumseagreen;
+}
+.trackGuesses {
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+}
