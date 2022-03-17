@@ -43,10 +43,6 @@ function trackGuesses() {
     }
 }
 
-function newRNG() {
-    randomNumber = Math.floor(Math.random() * 10 + 1);
-}
-
 function resetGame() {
     p.innerText = "";
     resultsDiv.append(p);
@@ -54,7 +50,6 @@ function resetGame() {
         ul.removeChild(ul.firstChild);
     }
     guesses = [];
-    newRNG();
 }
 
 submitButton.addEventListener("click", checkGuess);

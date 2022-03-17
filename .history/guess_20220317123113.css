@@ -30,14 +30,13 @@ body {
 .results {
     background-color: mediumseagreen;
     display: flex;
-    flex-direction: column-reverse;
     grid-column: 1/3;
     grid-row: 2 / 4;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
-.guessesContainer {
+.trackGuesses {
     background-color: orange;
     display: flex;
     flex-direction: column;

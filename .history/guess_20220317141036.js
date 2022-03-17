@@ -1,6 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 10 + 1);
 let guesses = [];
-
 const guessInput = document.getElementById("guessInput");
 const resultsDiv = document.getElementById("results");
 const submitButton = document.getElementById("submitBtn");
@@ -8,6 +6,10 @@ const resetButton = document.getElementById("resetBtn");
 const p = document.createElement("p");
 const ul = document.getElementById("guessList");
 const li = document.createElement("li");
+
+function generateRand() {
+    let randomNumber = Math.floor(Math.random() * 10 + 1);
+}
 
 function checkGuess() {
     const currentGuess = Number(guessInput.value);
@@ -43,10 +45,6 @@ function trackGuesses() {
     }
 }
 
-function newRNG() {
-    randomNumber = Math.floor(Math.random() * 10 + 1);
-}
-
 function resetGame() {
     p.innerText = "";
     resultsDiv.append(p);
@@ -54,7 +52,6 @@ function resetGame() {
         ul.removeChild(ul.firstChild);
     }
     guesses = [];
-    newRNG();
 }
 
 submitButton.addEventListener("click", checkGuess);

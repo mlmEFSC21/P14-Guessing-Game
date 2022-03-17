@@ -1,6 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 let guesses = [];
-
+let numOfGuesses = guesses.length;
 const guessInput = document.getElementById("guessInput");
 const resultsDiv = document.getElementById("results");
 const submitButton = document.getElementById("submitBtn");
@@ -15,36 +15,22 @@ function checkGuess() {
         guesses.push(currentGuess);
         p.innerText = "Congratulations! You guessed the number!";
         resultsDiv.append(p);
-        let numOfGuesses = guesses.length;
         console.log(`It took you ${numOfGuesses} guesses!`);
     }
     if (currentGuess < randomNumber) {
         guesses.push(currentGuess);
+        li.innerText = currentGuess;
         p.innerText = "Too low. Try again!";
         resultsDiv.append(p);
-        trackGuesses();
+        ul.appendChild(li);
     }
     if (currentGuess > randomNumber) {
         guesses.push(currentGuess);
+        li.innerText = currentGuess;
         p.innerText = "Too high. Try again!";
         resultsDiv.append(p);
-        trackGuesses();
-    }
-}
-
-function trackGuesses() {
-    while (ul.hasChildNodes()) {
-        ul.removeChild(ul.firstChild);
-    }
-    for (i = 0; i <= guesses.length - 1; i++) {
-        let li = document.createElement("li");
-        li.innerText = guesses[i];
         ul.appendChild(li);
     }
-}
-
-function newRNG() {
-    randomNumber = Math.floor(Math.random() * 10 + 1);
 }
 
 function resetGame() {
@@ -54,7 +40,6 @@ function resetGame() {
         ul.removeChild(ul.firstChild);
     }
     guesses = [];
-    newRNG();
 }
 
 submitButton.addEventListener("click", checkGuess);

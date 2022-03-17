@@ -20,31 +20,20 @@ function checkGuess() {
     }
     if (currentGuess < randomNumber) {
         guesses.push(currentGuess);
+        li.innerText = currentGuess;
         p.innerText = "Too low. Try again!";
         resultsDiv.append(p);
-        trackGuesses();
+        ul.appendChild(li);
+        console.log(guesses);
     }
     if (currentGuess > randomNumber) {
         guesses.push(currentGuess);
+        li.innerText = currentGuess;
         p.innerText = "Too high. Try again!";
         resultsDiv.append(p);
-        trackGuesses();
-    }
-}
-
-function trackGuesses() {
-    while (ul.hasChildNodes()) {
-        ul.removeChild(ul.firstChild);
-    }
-    for (i = 0; i <= guesses.length - 1; i++) {
-        let li = document.createElement("li");
-        li.innerText = guesses[i];
         ul.appendChild(li);
+        console.log(guesses);
     }
-}
-
-function newRNG() {
-    randomNumber = Math.floor(Math.random() * 10 + 1);
 }
 
 function resetGame() {
@@ -54,7 +43,6 @@ function resetGame() {
         ul.removeChild(ul.firstChild);
     }
     guesses = [];
-    newRNG();
 }
 
 submitButton.addEventListener("click", checkGuess);

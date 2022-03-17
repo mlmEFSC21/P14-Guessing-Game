@@ -37,7 +37,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.guessesContainer {
+.trackGuesses {
     background-color: orange;
     display: flex;
     flex-direction: column;
