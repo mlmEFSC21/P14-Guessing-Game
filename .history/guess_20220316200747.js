@@ -8,18 +8,16 @@ function getGuess() {
 }
 
 function checkGuess(guess, rng) {
-    while (guess != rng) {
-        if (guess == rng) {
-            results.innerText = "You won. Good job!";
-        } else if (guess < rng) {
-            guesses.push(currentGuess);
-            results.innerText = "Too low. Try again!";
-            getGuess();
-        } else {
-            guesses.push(currentGuess);
-            results.innerText = "Too high. Try again!";
-            getGuess();
-        }
+    if (guess == rng) {
+        results.innerText = "You won. Good job!";
+    } else if (guess < rng) {
+        guesses.push(randomNumber);
+        results.innerText = "Too low. Try again!";
+        getGuess();
+    } else {
+        guesses.push(randomNumber);
+        results.innerText = "Too high. Try again!";
+        getGuess();
     }
 }
 

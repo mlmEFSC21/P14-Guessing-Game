@@ -1,6 +1,6 @@
 let randomNumber = Math.floor(Math.random() * 1000 + 1);
 let guesses = [];
-let currentGuess;
+let currentGuess = null;
 let results = document.getElementById("results");
 
 function getGuess() {
@@ -8,23 +8,20 @@ function getGuess() {
 }
 
 function checkGuess(guess, rng) {
-    while (guess != rng) {
-        if (guess == rng) {
-            results.innerText = "You won. Good job!";
-        } else if (guess < rng) {
-            guesses.push(currentGuess);
-            results.innerText = "Too low. Try again!";
-            getGuess();
-        } else {
-            guesses.push(currentGuess);
-            results.innerText = "Too high. Try again!";
-            getGuess();
-        }
+    if (guess == rng) {
+        results.innerHTML = "<p>You won. Good job!</p>";
+    } else if (guess < rng) {
+        guesses.push(guess);
+        results.innerHTML = "<p>Too low. Try again!";
+        getGuess();
+    } else {
+        guesses.push(guess);
+        results.innerHTML = "<p>Too high. Try again!";
+        getGuess();
     }
 }
 
 getGuess();
-
 checkGuess(currentGuess, randomNumber);
 
 //logging random number for debugging. DELETE LATER
