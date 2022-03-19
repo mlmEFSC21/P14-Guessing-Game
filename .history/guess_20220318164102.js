@@ -62,10 +62,9 @@ function resetGame() {
     while (ul.hasChildNodes()) {
         ul.removeChild(ul.firstChild);
     }
-    h3.remove();
+    guessesContainer.removeChild("h3");
     guesses = [];
     newRNG();
-    console.log(randomNumber);
 }
 
 submitButton.addEventListener("click", checkGuess);

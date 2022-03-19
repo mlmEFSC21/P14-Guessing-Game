@@ -1,7 +1,7 @@
 :root {
     --clr-primary: #218bc6;
     --clr-secondary: #48a9e0;
-    --clr-tertiary: #235ea6;
+    --clr-tertiary: #196996;
 }
 
 *,
@@ -14,7 +14,7 @@
 body {
     background-color: var(--clr-tertiary);
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .pageTitle {
     text-align: center;
@@ -27,9 +27,10 @@ body {
     margin: 10px auto;
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
     gap: 10px;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 .results {
@@ -38,16 +39,11 @@ body {
     flex-direction: column-reverse;
     margin: 10px auto;
     padding: 10px;
-    grid-column: 1 / 3;
-    grid-row: 1 / 4;
+    grid-column: 1/3;
+    grid-row: 2 / 4;
     height: 100%;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-input,
-button {
-    margin-block: 10px;
 }
 .inputForm {
     display: flex;
@@ -71,8 +67,10 @@ input {
     outline: none;
     font-size: 14px;
 }
+.guessInput {
+}
 button {
-    border: solid 1px white;
+    border: solid 1px; navy;
     margin-bottom: 10px;
     padding: 12px;
     border-radius: 3px;
@@ -83,11 +81,7 @@ button {
 }
 .submitBtn {
     background: var(--clr-secondary);
-    border: solid 0.5px navy;
     margin-left: 15px;
-}
-.submitBtn:hover {
-    background: #44b3db;
 }
 .resetBtn {
     background: darkred;
@@ -101,7 +95,6 @@ button {
     display: flex;
     flex-direction: column;
     height: 100%;
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
     align-items: center;
-    overflow: hidden;
 }

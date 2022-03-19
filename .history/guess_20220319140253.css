@@ -1,9 +1,3 @@
-:root {
-    --clr-primary: #218bc6;
-    --clr-secondary: #48a9e0;
-    --clr-tertiary: #235ea6;
-}
-
 *,
 *::after,
 *::before {
@@ -12,42 +6,38 @@
     padding: 0;
 }
 body {
-    background-color: var(--clr-tertiary);
+    background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .pageTitle {
     text-align: center;
 }
 .gameContainer {
-    background-color: var(--clr-secondary);
+    background-color: hotpink;
     display: grid;
     max-width: 960px;
     height: 50vh;
     margin: 10px auto;
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
     gap: 10px;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 .results {
-    background-color: var(--clr-primary);
+    background-color: mediumseagreen;
     display: flex;
     flex-direction: column-reverse;
     margin: 10px auto;
     padding: 10px;
-    grid-column: 1 / 3;
-    grid-row: 1 / 4;
+    grid-column: 1/3;
+    grid-row: 2 / 4;
     height: 100%;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-input,
-button {
-    margin-block: 10px;
 }
 .inputForm {
     display: flex;
@@ -71,9 +61,11 @@ input {
     outline: none;
     font-size: 14px;
 }
+.guessInput {
+}
 button {
-    border: solid 1px white;
-    margin-bottom: 10px;
+    border: none;
+    margin: 10px;
     padding: 12px;
     border-radius: 3px;
     width: 125px;
@@ -82,26 +74,18 @@ button {
     font-size: 14px;
 }
 .submitBtn {
-    background: var(--clr-secondary);
-    border: solid 0.5px navy;
-    margin-left: 15px;
-}
-.submitBtn:hover {
-    background: #44b3db;
 }
 .resetBtn {
     background: darkred;
-    color: white;
 }
 .resetBtn:hover {
     background: red;
 }
 .guessesContainer {
-    background-color: var(--clr-primary);
+    background-color: orange;
     display: flex;
     flex-direction: column;
     height: 100%;
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
     align-items: center;
-    overflow: hidden;
 }

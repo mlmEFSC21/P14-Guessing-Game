@@ -1,7 +1,7 @@
 :root {
     --clr-primary: #218bc6;
     --clr-secondary: #48a9e0;
-    --clr-tertiary: #235ea6;
+    --clr-tertiary: #196996;
 }
 
 *,
@@ -14,7 +14,7 @@
 body {
     background-color: var(--clr-tertiary);
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .pageTitle {
     text-align: center;
@@ -45,9 +45,8 @@ body {
     align-items: center;
     overflow: hidden;
 }
-input,
-button {
-    margin-block: 10px;
+form > * {
+    margin-bottom: 20px;
 }
 .inputForm {
     display: flex;

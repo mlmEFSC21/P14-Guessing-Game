@@ -1,4 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 1000 + 1);
+let randomNumber = Math.floor(Math.random() * 10 + 1);
 let guesses = [];
 
 const guessInput = document.getElementById("guessInput");
@@ -62,10 +62,8 @@ function resetGame() {
     while (ul.hasChildNodes()) {
         ul.removeChild(ul.firstChild);
     }
-    h3.remove();
     guesses = [];
     newRNG();
-    console.log(randomNumber);
 }
 
 submitButton.addEventListener("click", checkGuess);

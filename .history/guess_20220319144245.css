@@ -1,7 +1,7 @@
 :root {
     --clr-primary: #218bc6;
     --clr-secondary: #48a9e0;
-    --clr-tertiary: #235ea6;
+    --clr-tertiary: #196996;
 }
 
 *,
@@ -23,7 +23,7 @@ body {
     background-color: var(--clr-secondary);
     display: grid;
     max-width: 960px;
-    height: 50vh;
+    height: 75vh;
     margin: 10px auto;
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);

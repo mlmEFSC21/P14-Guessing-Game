@@ -1,4 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 1000 + 1);
+let randomNumber = Math.floor(Math.random() * 10 + 1);
 let guesses = [];
 
 const guessInput = document.getElementById("guessInput");
@@ -8,8 +8,6 @@ const resetButton = document.getElementById("resetBtn");
 const p = document.createElement("p");
 const ul = document.getElementById("guessList");
 const li = document.createElement("li");
-const guessesContainer = document.getElementById("guessesContainer");
-const h3 = document.createElement("h3");
 
 //checks to see if the guess is higher, lower, or equal to
 function checkGuess() {
@@ -18,7 +16,8 @@ function checkGuess() {
         guesses.push(currentGuess);
         p.innerText = "Congratulations! You guessed the number!";
         resultsDiv.append(p);
-        countGuesses();
+        let numOfGuesses = guesses.length;
+        console.log(`It took you ${numOfGuesses} guesses!`);
     }
     if (currentGuess < randomNumber) {
         guesses.push(currentGuess);
@@ -44,13 +43,6 @@ function trackGuesses() {
         ul.appendChild(li);
     }
 }
-
-//counts how many guesses. Uses array length.
-function countGuesses() {
-    let numOfGuesses = guesses.length;
-    h3.innerText = `It took you ${numOfGuesses} guesses!`;
-    guessesContainer.append(h3);
-}
 // creates a new random number for replay
 function newRNG() {
     randomNumber = Math.floor(Math.random() * 10 + 1);
@@ -62,10 +54,8 @@ function resetGame() {
     while (ul.hasChildNodes()) {
         ul.removeChild(ul.firstChild);
     }
-    h3.remove();
     guesses = [];
     newRNG();
-    console.log(randomNumber);
 }
 
 submitButton.addEventListener("click", checkGuess);
