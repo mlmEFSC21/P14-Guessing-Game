@@ -65,11 +65,11 @@ function resetGame() {
     h3.remove();
     guesses = [];
     newRNG();
-    //logging random number for debugging.
     console.log(randomNumber);
 }
 
 submitButton.addEventListener("click", checkGuess);
 resetButton.addEventListener("click", resetGame);
-//logging random number for debugging.
+//logging random number for debugging. DELETE LATER
 console.log(randomNumber);
+console.log(guesses);
